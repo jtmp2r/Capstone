@@ -2,14 +2,14 @@
   <section class="login">
     <h2>Login or Register</h2>
     <div>
-      Email: <input type="text" autofocus="true" ng-model="" />
+      Email: <input type="text" autofocus="true" ng-model="account.email">
     </div>
     <div>
-      Password: <input type="password" ng-model="" />
+      Password: <input type="password" ng-model="account.password">
     </div>
     <div>
-      <button class="btnLogin btn btn-info" ng-click="">Login</button>
-      <button class="btnReg btn btn-default" ng-click="">Register</button>
+      <button class="btnLogin btn btn-info" ng-click="login()">Login</button>
+      <button class="btnReg btn btn-info" ng-click="register()">Register</button>
     </div>
   </section>
 </div>

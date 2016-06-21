@@ -7,13 +7,26 @@
 </head>
 <body ng-app="MangaApp">
 
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 main-container">
+			  <div class="col-xs-12" ng-view></div>
+			</div>
+		</div>
+
+
 
 
   <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript" src="./lib/bower_components/angular/angular.js"></script>
   <script type="text/javascript" src="./lib/bower_components/angular-route/angular-route.js"></script>
-  <script type="text/javascript" src="./lib/bower_components/angularfire/dist/angularfire.js"></script>
-  <script type="text/javascript" src="./app/app.js"></script>
+  <script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
+  <script type="text/javascript" src="/app/app.js"></script>
+ 	<script type="text/javascript" src="app/factory/AuthFactory.js"></script> 
+ 	<script type="text/javascript" src="app/controllers/FirebaseFactory.js"></script> 
+  <script type="text/javascript" src="app/controllers/LoginCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/SearchCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/LoginCtrl.js"></script>
+
 </body>
 </html>
