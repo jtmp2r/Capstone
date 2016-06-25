@@ -1,20 +1,20 @@
 <div ng-include=" '/partials/navbar.html' "></div>
 
 <div>
-	<input type="text" class="form-control" ng-model="mangaSearch">
-	<button class="btn btn-danger" ng-click="searchBooks(mangaSearch)">Click</button>
+		<input type="text" class="form-control" ng-model="mangaSearch">
+		<button class="btn btn-danger" ng-click="searchBooks(mangaSearch)">Click</button>
 
 
 
 
 	<div class="scroll">
-  <div class=" col-md-3 movieCard" ng-repeat="manga in mangaArray">
-    <p class="manga">{{manga.Title}}</p>
-    <p class="manga">{{manga.Author}}</p>
-    <p class="manga">{{manga.Genre}}</p>
-    <img class="activator" ng-src={{manga.Poster}} err-src="img/noImage.png">
-     <button ng-click="deleteMangaItem(manga.mangaID)">Delete</button>
-  </div>
-</div>
+	  <div class=" col-md-3 movieCard" ng-repeat="manga in mangaArray">
+	    <p class="manga">{{manga.Title}}</p>
+	    <p class="manga">{{manga.Author}}</p>
+	    <p class="manga">{{manga.Genre}}</p>
+	    <img class="activator" ng-src={{manga.Poster}} err-src="img/noImage.png">
+	     <button ng-click="sendMangaItem(manga.mangaID)">Delete</button>
+	  </div>
+	</div>
 
 </div>
