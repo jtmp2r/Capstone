@@ -4,7 +4,9 @@ app.factory("FirebaseFactory", function($q, $http, AuthFactory, firebaseURL){
 
   return {
 
-    toWatchListArray:[],
+    toListArray:[],
+    myMangaArray:[],
+
 
     getMangaFromFirebase : function() {
       let user = AuthFactory.getUser();
@@ -54,22 +56,52 @@ app.factory("FirebaseFactory", function($q, $http, AuthFactory, firebaseURL){
       });
     },
 
-    deleteArrayItem: function(sentID) {
-      return $q((resolve,reject) => {
-          $http.delete(`${firebaseURL}/manga/${sentID}.json`)
-          .success((response)=> {
-              resolve(response);
-          });
-      }).then( () => {
-        for (var i = 0; i < this.toMyListArray.length; i++) {
-          for (var key in this.toMyListArray[i] ) {
-            if (this.toMyListArray[i][key] === sentID) {
-              this.toMyListArray.splice(i, 1);
-              break;
-            }
-          }
+
+    updateMangaList: function (manga){
+        this.toListArray.push(manga);
+      },
+
+
+    updateList: function (manga){
+      this.myMangaArray.push(manga);
+      console.log("Stuff", this.myMangaArray);
+    },
+
+
+    deleteArrayItem: function(mangaID) {
+      for (var i = 0; i < this.toListArray.length; i++) {
+        for (var key in this.toListArray[i] ) {
+          if (this.toListArray[i][key] === mangaID) {
+            this.toListArray.splice(i, 1);
+            break;
+          };
         }
-      })
+      }
     }
+
   }
 });
+
+
+
+
+
+
+
+    // deleteArrayItem: function(sentID) {
+    //   return $q((resolve,reject) => {
+    //       $http.delete(`${firebaseURL}/manga/${sentID}.json`)
+    //       .success((response)=> {
+    //           resolve(response);
+    //       });
+    //   }).then( () => {
+    //     for (var i = 0; i < this.toMyListArray.length; i++) {
+    //       for (var key in this.toMyListArray[i] ) {
+    //         if (this.toMyListArray[i][key] === sentID) {
+    //           this.toMyListArray.splice(i, 1);
+    //           break;
+    //         }
+    //       }
+    //     }
+    //   })
+    // }

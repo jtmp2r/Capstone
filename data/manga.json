@@ -3,63 +3,63 @@
     {
       "Title": "Berserk",
       "Author": "Kentaro Miura",
-      "id": "tt0076759",
+      "mangaID": "tt0076759",
       "Genre": "Adventure, Action, Horror, Mature",
       "Poster": "http://i10.mangareader.net/berserk/19/berserk-1591652.jpg"
     },
     {
       "Title": "Naruto",
       "Author": "Masashi Kishimoto",
-      "id": "tt0080684",
+      "mangaID": "tt0080684",
       "Genre": "Martial Arts, Action, Fantasy, Shōnen",
       "Poster": "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg"
     },
     {
       "Title": "Black Joke",
       "Author": "Koike Rintarou",
-      "id": "tt0086190",
+      "mangaID": "tt0086190",
       "Genre": "Adventure, Action, Comedy, Mature",
       "Poster": "https://i.ytimg.com/vi/ftNAW2OIfc0/maxresdefault.jpg"
     },
     {
       "Title": "Gantz",
       "Author": "Hiroya Oku",
-      "id": "tt2488496",
+      "mangaID": "tt2488496",
       "Genre": "Adventure, Action, Horror, Mature, SciFi, Drama",
       "Poster": "http://a.mhcdn.net/store/manga/19987/001.0/compressed/j001.jpg?v=1448244181"
     },
     {
       "Title": "Hajime No Ippo",
       "Author": "George Morikawa",
-      "id": "tt0120915",
+      "mangaID": "tt0120915",
       "Genre": "Action, Sports, Shōnen",
       "Poster": "http://img1.ak.crunchyroll.com/i/spire2/47245fb608dd8cfffb2f5b4d39ebe0fb1380929548_full.jpg"
     },
     {
       "Title": "History's Strongest Disciple, Kenichi",
       "Author": "Matsuena Syun",
-      "id": "tt0121766",
+      "mangaID": "tt0121766",
       "Genre": "movie",
       "Poster": "http://mangasee.co/cover/HistoryStrongestDiscipleKenichi.jpg"
     },
     {
       "Title": "Uzumaki",
       "Author": "Ito Junji",
-      "id": "tt0796366",
+      "mangaID": "tt0796366",
       "Genre": "Drama, Horror, Mystery, Seinen, Psychological, Supernatural",
       "Poster": "https://rocklobsterjwt.files.wordpress.com/2015/02/th8wur67pw.jpg"
     },
     {
       "Title": "Koukou Tekkenden Tough",
       "Author": "Saruwatari Tetsuya",
-      "id": "tt0121765",
+      "mangaID": "tt0121765",
       "Genre": "Martial Arts, Seinen, Action, Sports",
       "Poster": "http://ia.media-imdb.com/images/M/MV5BMTY5MjI5NTIwNl5BMl5BanBnXkFtZTYwMTM1Njg2._V1_SX300.jpg"
     },
     {
       "Title": "Sun-Ken Rock",
       "Author": "Boichi",
-      "id": "tt1408101",
+      "mangaID": "tt1408101",
       "Genre": "Action, Romance, Mature, Martial Arts, Seinen, Comedy, Drama",
       "Poster": "https://upload.wikimedia.org/wikipedia/en/e/e2/Sun_ken_rock_v01.jpg"
     }
