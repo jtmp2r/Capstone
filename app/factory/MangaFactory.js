@@ -1,18 +1,16 @@
 "use strict";
-
 app.factory("MangaFactory", function($q, $http){
 
   return {
     //Function to grab data from (json) Manga API
-    getMangaFromApi : function(searchTerm){
-
+    getMangaApi: function(){
       let manga = [];
-
       return $q(function(resolve, reject){
-        $http.get(`https://www.mangaeden.com/api/list/0/${searchTerm}&y=&type=&r=json`)
+        $http.get(`./data/manga.json`)
           .success(function(mangaJson){
-            let mangaObject = [];
-            moviesObject = mangaJson.Search;
+            console.log("manga", mangaJson)
+            let mangaObject = mangaJson.Find;
+            // mangaObject = mangaJson.Find;
             Object.keys(mangaObject).forEach(function(key){
               manga.push(mangaObject[key]);
             });

@@ -1,9 +1,9 @@
-app.controller("myMovieCtrl", function($scope, $location, FirebaseFactory){
+app.controller("ProfileCtrl", function($scope, $location, FirebaseFactory, MangaFactory){
 
 
-	$scope.DeleteMyMovieArrayItem = function(imdbID) {
-	    FirebaseFactory.deleteArrayItem(imdbID);
-	    $scope.myMangaArray = FirebaseFactory.toWatchListArray;
+	$scope.deleteArrayItem = function(mangaID) {
+	    FirebaseFactory.deleteArrayItem(mangaID);
+	    $scope.myMangaArray = FirebaseFactory.toMyListArray;
 	  };
 
 })

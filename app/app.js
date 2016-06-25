@@ -15,10 +15,9 @@ app.config(function($routeProvider) {
   $routeProvider.
   	when("/", {
       templateUrl: "partials/welcome-page.html",
-      controller: 
     }).
     when("/manga-list", {
-      templateUrl: "partials/welcome-page.html",
+      templateUrl: "partials/manga-list.html",
       controller: "SearchCtrl"
     }).
     when("/login", {

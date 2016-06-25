@@ -14,8 +14,8 @@ app.factory("FirebaseFactory", function($q, $http, AuthFactory, firebaseURL){
           .success( (returnObject) => {
             resolve(returnObject);
         }).then( (returnObject) => {
-          Object.keys(returnObject.data).forEach( (key) => {
-            if (returnObject.data[key].userRating === "notRated") {
+          Object.keys(returnObject.data).forEach((key) => {
+            if (returnObject.data[key].userRating === "nothing") {
               returnObject.data[key].id = key;
               this.updateMangaToWatchList(returnObject.data[key]);
             } else {
@@ -27,48 +27,49 @@ app.factory("FirebaseFactory", function($q, $http, AuthFactory, firebaseURL){
     },
 
     putManga: function (manga) {
-      return $q(function(resolve,reject){
-          $http.put(`${firebaseURL}movies/${manga.id}.json`, manga)
+      return $q(function(resolve, reject){
+          $http.put(`${firebaseURL}manga/${manga.id}.json`, manga)
           .success(function(response){
               resolve(response);
           });
       });
     },
 
-    postManga: function (movie) {
+    postManga: function (manga) {
       let user = AuthFactory.getUser();
-      return $q(function(resolve,reject){
+      return $q(function(resolve, reject){
           $http.post(`${firebaseURL}/manga.json`,
               JSON.stringify({
-                  Title: manga.t,
-                  mangaID: manga.i,
-                  Poster: manga.im,
+                  Title: manga.Title,
+                  Author: manga.Author,
+                  mangaID: manga.id,
+                  Genre: manga.Genre,
+                  Poster: manga.Poster,
+                  userRating: "nothing",
                   uid:  user.uid
               }))
           .success(function(response){
               resolve(response);
           });
       });
+    },
+
+    deleteArrayItem: function(sentID) {
+      return $q((resolve,reject) => {
+          $http.delete(`${firebaseURL}/manga/${sentID}.json`)
+          .success((response)=> {
+              resolve(response);
+          });
+      }).then( () => {
+        for (var i = 0; i < this.toMyListArray.length; i++) {
+          for (var key in this.toMyListArray[i] ) {
+            if (this.toMyListArray[i][key] === sentID) {
+              this.toMyListArray.splice(i, 1);
+              break;
+            }
+          }
+        }
+      })
     }
-
-    // deleteArrayItem: function(sentID) {
-    //   return $q((resolve,reject) => {
-    //       $http.delete(`https://ng-bg-mh.firebaseio.com/movies/${sentID}.json`)
-    //       .success((response)=>{
-    //           resolve(response);
-    //       });
-    //   }).then( () => {
-    //     for (var i = 0; i < this.toWatchListArray.length; i++) {
-    //       for (var key in this.toWatchListArray[i] ) {
-    //         if (this.toWatchListArray[i][key] === sentID) {
-    //           this.toWatchListArray.splice(i, 1);
-    //           break;
-    //         }
-    //       }
-    //   }
-
-
-
-
   }
 });
