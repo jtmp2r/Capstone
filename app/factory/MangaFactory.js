@@ -10,17 +10,17 @@ app.factory("MangaFactory", function($q, $http, md5){
       console.log("search", searchTerm)
       let hash = md5.createHash(ts + privateKey + publicKey);
       console.log('hash', hash, "apikey", publicKey);
-      let url = "http://gateway.marvel.com:80/v1/public/comics?format=graphic%20novel&formatType=comic&noVariants=true&dateRange=2010-01-01%2C2015-01-01&hasDigitalIssue=false&orderBy=title";
+      let url = `http://gateway.marvel.com:80/v1/public/comics?title=${searchTerm}`;
 
       let manga = [];
       return $q(function(resolve, reject){
-        url += "&limit="+50+"&apikey="+publicKey+"&ts="+ts+"&hash="+hash;
+        url += "&limit="+15+"&apikey="+publicKey+"&ts="+ts+"&hash="+hash;
         console.log("url", url)
         $http.get(url)
           .success(function(mangaJson){
-            console.log("manga", mangaJson)
+            console.log("manga", mangaJson.data.results)
             let mangaObject = [];
-            mangaObject = mangaJson;
+            mangaObject = mangaJson.data.results;
             Object.keys(mangaObject).forEach(function(key){
               manga.push(mangaObject[key]);
             });

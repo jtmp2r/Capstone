@@ -8,10 +8,11 @@
 
 
 	<div class="scroll">
-	  <div class="col-md-3" ng-repeat="manga in mangaArray">
+	  <div class="col-md-3" ng-repeat="manga in mangaArray track by $index">
 	    <p class="manga">{{manga.title}}</p>
+	    <p class="manga">{{manga.id}}</p> 
 	    <p class="manga">{{manga.description}}</p>
-	    <img class="activator" ng-src={{manga.Poster}} err-src="img/noImage.png">
+	    <!-- <img class="activator" ng-src={{manga.Poster}} err-src="img/noImage.png"> -->
 	     <button ng-click="sendMangaItem(manga.mangaID)">Add</button>
 	  </div>
 	</div>

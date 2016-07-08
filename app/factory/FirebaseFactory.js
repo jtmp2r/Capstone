@@ -40,15 +40,13 @@ app.factory("FirebaseFactory", function($q, $http, AuthFactory, firebaseURL){
     postManga: function (manga) {
       let user = AuthFactory.getUser();
       return $q(function(resolve, reject){
+          console.log("string", manga)
           $http.post(`${firebaseURL}/manga.json`,
               JSON.stringify({
-                  Title: manga.Title,
-                  Author: manga.Author,
-                  mangaID: manga.id,
-                  Genre: manga.Genre,
-                  Poster: manga.Poster,
-                  userRating: "nothing",
-                  uid:  user.uid
+                  title: manga.title,
+                  description: manga.description,
+                  mangaID: manga.mangaID,
+                  uid: user.uid
               }))
           .success(function(response){
               resolve(response);
