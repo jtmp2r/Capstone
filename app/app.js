@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("MangaApp", ["ngRoute"])
+var app = angular.module("MangaApp", ["ngRoute", 'angular-md5'])
 	.constant('firebaseURL', 'https://mangacapstone.firebaseio.com/');
 
 	let isAuth= (AuthFactory) => new Promise ((resolve, reject) =>  {
@@ -19,6 +19,10 @@ app.config(function($routeProvider) {
     when("/manga-list", {
       templateUrl: "partials/manga-list.html",
       controller: "SearchCtrl"
+    }).
+    when("/profile", {
+      templateUrl: "partials/profile.html",
+      controller: "ProfileCtrl"
     }).
     when("/login", {
       templateUrl: "partials/login.html",

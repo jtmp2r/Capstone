@@ -1,14 +1,14 @@
 <div ng-include=" '/partials/navbar.html' "></div>
 
 <div>
-    <input type="text" class="form-control" ng-model="mangaSearch">
-    <button class="btn btn-danger" ng-click="searchBooks(mangaSearch)">Click</button>
+    <input type="text" class="form-control" ng-model="searchText">
+    <button class="btn btn-danger">Click</button>
 
 
 
 
   <div class="scroll">
-    <div class=" col-md-3 movieCard" ng-repeat="manga in mangaArray">
+    <div class=" col-md-3 movieCard" ng-repeat="manga in mangaArray | filter: searchText">
       <p class="manga">{{manga.Title}}</p>
       <p class="manga">{{manga.Author}}</p>
       <p class="manga">{{manga.Genre}}</p>

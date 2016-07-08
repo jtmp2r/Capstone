@@ -7,11 +7,12 @@ app.controller("ProfileCtrl", function($scope, $location, FirebaseFactory, Manga
   }
 
 
-  $scope.deleteArrayItem = function(id) {
-    FirebaseFactory.deleteToWatchListArrayItem(id);
+  $scope.deleteItem = function(id) {
+    FirebaseFactory.deleteArrayItem(id);
     $scope.mangaArray = FirebaseFactory.toListArray;
   };
 
+  mangaList();
 
 })
 
