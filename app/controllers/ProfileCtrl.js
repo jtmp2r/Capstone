@@ -2,8 +2,9 @@ app.controller("ProfileCtrl", function($scope, $location, FirebaseFactory, Manga
   $scope.mangaArray = [];
 
   function mangaList(){
+  	FirebaseFactory.clearMangaList();
+  	FirebaseFactory.getMangaFromFirebase();
     $scope.mangaArray = FirebaseFactory.toListArray;
-    console.log("My shit", $scope.mangaArray );
   }
 
 
